@@ -112,8 +112,8 @@ public class Main {
             Scanner scanner6 = new Scanner(System.in);
             name_cat = scanner6.nextLine();
         }
-        System.out.println("Пожалуйста, внесите оплату за каждый выбранный товар");
 
+        System.out.println("Пожалуйста, внесите оплату за каждый выбранный товар");
         double[] pay = new double[buyer.n];
         Scanner scan_pay = new Scanner(System.in);
         for (int n = 0; n < buyer.n; n++) {
