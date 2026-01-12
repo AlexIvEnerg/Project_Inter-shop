@@ -3,11 +3,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+public class Main_3 {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        Authentication buyer = new Authentication();
+        var buyer = new Authentication();
         System.out.print("¬ведите логин и пароль: ");
         buyer.requisites();
         List<Product> list1 = new ArrayList<>();

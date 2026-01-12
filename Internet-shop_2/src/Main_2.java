@@ -5,7 +5,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class Main {
+public class Main_2 {
     public static void main(String[] args) {
 
         Authentication buyer = new Authentication();
