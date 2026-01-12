@@ -2,17 +2,31 @@ import java.util.Scanner;
 
 public class Authentication {
     int n;
-    String log;
-    String pass;
+    private String log;
+    private String pass;
     Scanner scanner = new Scanner(System.in);
     User user ;
+
+    public String getLog() {
+        return log;
+    }
+    public String getPass() {
+        return pass;
+    }
+    public void setLog(String log) {
+        this.log = log;
+    }
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
     public void requisites() {
         boolean check;
         do {
             check = false;
             if (scanner.hasNextLine()) {
-                log = scanner.nextLine();
-                System.out.println(log);
+                String name = scanner.nextLine();
+                setLog(name);
+                System.out.println(getLog());
             } else {
                 System.out.println("Имя не введено, повторите ввод: ");
                 check = true;
@@ -22,8 +36,9 @@ public class Authentication {
         do {
             check = false;
             if (scanner.hasNextLine()) {
-                pass = scanner.nextLine();
-                System.out.println(pass);
+                String string = scanner.nextLine();
+                setPass(string);
+                System.out.println(getPass());
             } else {
                 System.out.println("Пароль не введён, повторите ввод: ");
                 check = true;
@@ -32,7 +47,7 @@ public class Authentication {
     }
 
     public void assign() {
-        user = new User(n, log, pass);
+        user = new User(n, getLog(), getPass());
     }
 
 }
