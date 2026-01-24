@@ -1,10 +1,11 @@
+import java.io.*;
 import java.util.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main_3 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         var buyer = new Authentication();
@@ -160,11 +161,20 @@ public class Main_3 {
         System.out.println("Дата: "+dateTime.format(formatter));    System.out.println();
         System.out.printf("%-8s     %-5s%n", string_1, string_2);   System.out.format("----------------%n");
         double sum = 0;
+        File file_of_report = new File("Internet-shop_3\\src","File_of_report.txt");
+        boolean created = file_of_report.createNewFile();
         for (int i = 0; i < buyer.n; i++) {
-            System.out.format("%-8s     %-5s    %-1s%n", buyer.user.bask.baskList.get(i).getName(),
-                    buyer.user.bask.baskList.get(i).value, string_3);    sum += buyer.user.bask.baskList.get(i).value;
+            String name = buyer.user.bask.baskList.get(i).getName(); double val = buyer.user.bask.baskList.get(i).value;
+            System.out.format("%-8s     %-5s    %-1s%n", name, val, string_3);    sum += val;
+                try (FileWriter file = new FileWriter(file_of_report, true);
+                     PrintWriter writer = new PrintWriter(file)) {
+                    writer.print(name + " ");    writer.print(val + " ");    writer.println(string_3);
+                } catch (IOException ex) {
+                    System.out.print(ex.getMessage());
+                }
         }
         System.out.format("----------------%n");   System.out.printf("%-8s     %.2f   %-1s%n", string_4, sum, string_3);
+
     }
 
     public static void forPrint(List<Product> list) {
