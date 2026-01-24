@@ -1,0 +1,7 @@
+Rye_bread 21.8 Руб
+Cabbage 24.5 Руб
+Sausage 130.0 Руб
+Loaf 19.7 Руб
+Cutlets 150.0 Руб
+Onion 28.6 Руб
+Carrot 30.7 Руб
